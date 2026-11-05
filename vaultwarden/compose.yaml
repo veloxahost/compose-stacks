@@ -1,0 +1,28 @@
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [vaultwarden]
+
+  vaultwarden:
+    image: vaultwarden/server:latest-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: https://${DOMAIN}
+      SIGNUPS_ALLOWED: ${SIGNUPS_ALLOWED:-false}
+      # Generate with: docker run --rm -it vaultwarden/server /vaultwarden hash
+      ADMIN_TOKEN: ${ADMIN_TOKEN}
+    volumes:
+      - vw_data:/data
+
+volumes:
+  caddy_data:
+  caddy_config:
+  vw_data:
