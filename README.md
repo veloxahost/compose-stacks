@@ -34,6 +34,10 @@ Caddy obtains and renews a Let's Encrypt certificate for `DOMAIN` on first start
 
 Any VPS works. On [VeloxaHost](https://veloxahost.com/vps/docker-compose?utm_source=github&utm_medium=referral&utm_campaign=compose-stacks), servers are Docker-ready, bill hourly from $4/mo and take snapshots before upgrades in one click.
 
+## Read the write-up
+
+**Self-hosting vs SaaS: we priced 10 apps**: [dev.to](https://dev.to/veloxadev/self-hosting-vs-saas-we-priced-10-apps-saas-wins-at-small-scale-17p6) · [Medium](https://medium.com/@veloxahost26/self-hosting-vs-saas-we-priced-10-apps-saas-wins-at-small-scale-a2f2e0dd901e)
+
 ## License
 
 MIT
